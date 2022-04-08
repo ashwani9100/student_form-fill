@@ -15,19 +15,35 @@
         <form id="form" onsubmit="displayDetails()">
             <h1>Fill Student Details</h1>
             <div class="input">FullName: <input id="FullName" type="text" placeholder="Enter Name"></div>
-            <div class="input">RollNo: <input id="RollNo" type="text" placeholder="Enter RollNo"></div>
+            <div class="input">RollNo: <input id="RollNo" type="number"  placeholder="Enter RollNo"></div>
             <div class="input">Subject: <input id="Subject" type="text" placeholder="Subject Name"></div>
-            <button type="submit" id="entry" >Input entry</button>
-        </form>
+            <div class="store">Storage:
+                <select name="Options" id="storages" onchange="printSelectedItem()" >
+                <option value="Local Storage" id="local" >localStorage</option>
+                <option value="SessionStorage" id="session">sessionStorage</option>
+                <!-- <option value="Cookies" id="Cookies">cookies</option> -->
+                </select>
+            </div>
+            <button type="submit" id="entry"  >Input entry</button>
+            
+        </form> 
+        
     </div>
     <div class="students"></div>
     <table id="display">
-        <tr>
-            <th>FullName</th>
-            <th>RollNo</th>
-            <th>Subject</th>
-        </tr>
+        <thead>
+            <tr id="raw1">
+                <th>FullName</th>
+                <th>RollNo</th>
+                <th>Subject</th>
+                <th>Storage</th>
+                <th>Edit</th>
+                
+            </tr>
+        </thead>
+        
     </table>
+    
     <script src="script.js"></script>
 </body>
 
